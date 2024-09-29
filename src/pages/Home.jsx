@@ -23,11 +23,13 @@ const Home = () => {
       <img
         src="/banner.gif"
         alt="earth banner"
-        className="mt-2 rounded w-full"
+        className="my-2 rounded w-full"
       />
-      {gifs?.map((gif) => (
-        <Gif gif={gif} key={gif.title} />
-      ))}
+      <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 gap-2">
+        {gifs?.map((gif) => (
+          <Gif gif={gif} key={gif.title} />
+        ))}
+      </div>
     </div>
   );
 };
