@@ -14,29 +14,41 @@ const Header = () => {
             GIPHY
           </h1>
         </Link>
-
-        {/* render categories */}
-        <Link className="px-4 py-1 hover:gradient border-b-4 hidden lg:block">
-          Reactions
-        </Link>
-        <button onClick={() => setShowCategories(!showCategories)}>
-          <HiEllipsisVertical
-            size={35}
-            className={`${
-              showCategories ? "gradient" : ""
-            } py-0.5 hover:gradient border-b-4 hidden lg:block`}
-          />
-        </button>
-        <button className="bg-gray-700 py-1.5 px-6 rounded cursor-pointer">
-          <Link to="/favorites">Favorite GIFs</Link>
-        </button>
-        <button>
-          <HiMiniBars3BottomRight
-            size={30}
-            className="text-sky-400 block lg:hidden"
-          />
-        </button>
+        <div className="font-bold text-md flex gap-2 items-center">
+          {/* render categories */}
+          <Link className="px-4 py-1 hover:gradient border-b-4 hidden lg:block">
+            Reactions
+          </Link>
+          <button onClick={() => setShowCategories(!showCategories)}>
+            <HiEllipsisVertical
+              size={35}
+              className={`${
+                showCategories ? "gradient" : ""
+              } py-0.5 hover:gradient border-b-4 hidden lg:block`}
+            />
+          </button>
+          <button className="bg-gray-700 py-1.5 px-6 rounded cursor-pointer">
+            <Link to="/favorites">Favorite GIFs</Link>
+          </button>
+          <button>
+            <HiMiniBars3BottomRight
+              size={30}
+              className="text-sky-400 block lg:hidden"
+            />
+          </button>
+        </div>
+        {showCategories && (
+          <div className="absolute right-0 top-14 px-10 pt-6 w-full z-20 gradient">
+            <span>Catgories</span>
+            <hr />
+            <div>
+              <Link className="font-bold">Reactions</Link>
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* search */}
     </nav>
   );
 };
