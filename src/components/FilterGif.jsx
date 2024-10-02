@@ -31,12 +31,12 @@ const FilterGif = ({ alignLeft = false, showTrending = false }) => {
           : ""
       }`}
     >
-      <span className="flex gap-2">
-        {showTrending && (
+      {showTrending && (
+        <span className="flex gap-2">
           <HiMiniArrowTrendingUp size={25} className="text-teal-400" />
-        )}
-        <span className="font-semibold text-gray-400">Trending</span>
-      </span>
+          <span className="font-semibold text-gray-400">Trending</span>
+        </span>
+      )}
 
       <div className="flex min-w-80 rounded-full bg-gray-8`00">
         {filters.map((f) => (

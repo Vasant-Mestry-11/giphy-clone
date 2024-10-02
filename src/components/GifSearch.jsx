@@ -13,6 +13,16 @@ const GifSearch = () => {
 
     navigate(`/search/${query}`);
   };
+
+  const handleKeyEnter = (e) => {
+    if (e.keyCode === 13) {
+      searchGIFs();
+    }
+
+    // if (e.keyCode === 8 && !query) {
+    //   navigate("/");
+    // }
+  };
   return (
     <div className="flex relative">
       <input
@@ -21,7 +31,7 @@ const GifSearch = () => {
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search all the GIFs and Stickers"
         className="w-full pl-4 pr-14 py-5 text-xl text-black rounded-tl rounded-bl outline-none border border-gray-300"
-        onKeyDown={searchGIFs}
+        onKeyDown={handleKeyEnter}
       />
 
       {query && (
